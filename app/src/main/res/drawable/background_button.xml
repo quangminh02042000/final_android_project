@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Hien thi khi khong nhan nut button -->
+    <item android:state_pressed="false">
+    <shape>
+        <!--Mau nen button -->
+        <solid android:color="#75A877"></solid>
+        <!--Tao vien cho button-->
+        <stroke android:width="3dp"
+            android:color="#FFFFFF"></stroke>
+        <!-- do bo tron 4 goc button -->
+        <corners android:radius="35dp"></corners>
+    </shape>
+</item>
+</selector>
