@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="Add Subject"
+        android:text="Update Subject"
         android:textColor="#e69138"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/EditTextSubjectTitle"
+        android:id="@+id/EditTextUpdateSubjectTitle"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -26,7 +26,7 @@
         android:hint="Subject title" />
 
     <EditText
-        android:id="@+id/EditTextSubjectCredit"
+        android:id="@+id/EditTextUpdateSubjectCredit"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -34,7 +34,7 @@
         android:hint="Credit" />
 
     <EditText
-        android:id="@+id/EditTextSubjectTime"
+        android:id="@+id/EditTextUpdateSubjectTime"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -42,7 +42,7 @@
         android:hint="Time" />
 
     <EditText
-        android:id="@+id/EditTextSubjectPlace"
+        android:id="@+id/EditTextUpdateSubjectPlace"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -50,11 +50,11 @@
         android:hint="Place" />
 
     <Button
-        android:id="@+id/buttonAddSubject"
+        android:id="@+id/buttonUpdateSubject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Add" />
+        android:text="Update" />
 
 </LinearLayout>
