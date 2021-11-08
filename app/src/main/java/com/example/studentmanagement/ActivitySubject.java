@@ -8,8 +8,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.IInterface;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -152,6 +150,9 @@ public class ActivitySubject extends AppCompatActivity {
                 //xoá subject trong csdl
                 database.deleteSubject (position);
 
+                //xoa student
+                database.deleteSubjectStudent(position);
+
                 //cap nhat lai activity
                 Intent intent = new Intent (ActivitySubject.this,ActivitySubject.class);
                 startActivity (intent);
@@ -191,6 +192,5 @@ public class ActivitySubject extends AppCompatActivity {
                  startActivity (intent);
             }
         }
-
     }
 }

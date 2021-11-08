@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.model.Subject;
 
 public class Database extends SQLiteOpenHelper {
@@ -102,6 +103,43 @@ public class Database extends SQLiteOpenHelper {
     public int deleteSubject(int i) {
         SQLiteDatabase db = this.getWritableDatabase();
         int res =  db.delete(TABLE_SUBJECTS, ID_SUBJECTS + " = " + i, null);
+        return res;
+    }
+
+    //Delete student of deleted subject
+    public int deleteSubjectStudent(int i) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int res = db.delete(TABLE_STUDENT, ID_SUBJECTS + " = " + i, null);
+        return res;
+    }
+
+    //Insert student
+    public void addStudent(Student student) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(STUDENT_NAME, student.getStudent_name());
+        values.put(SEX, student.getSex());
+        values.put(STUDENT_CODE, student.getStudent_code());
+        values.put(DATE_OF_BIRTH, student.getDate_of_birth());
+        values.put(ID_SUBJECTS, student.getId_subject());
+
+        db.insert(TABLE_STUDENT, null, values);
+        db.close();
+    }
+
+    //Get all student of this subject
+    public Cursor getDataStudent(int id_subject) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_STUDENT + " WHERE " + ID_SUBJECTS + " = " + id_subject, null);
+
+        return res;
+    }
+
+    public int deleteStudent(int i) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int res = db.delete(TABLE_STUDENT, ID_STUDENT + " = " + i, null);
         return res;
     }
 }
